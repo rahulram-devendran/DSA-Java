@@ -1,4 +1,4 @@
-package Two_Sum.Two_Pointer;
+package Two_Sum.Hash_Map;
 
 import java.util.*;
 
