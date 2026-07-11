@@ -1,9 +1,6 @@
-package Two_Sum.Hash_Map;
+package Two_Sum.Two_Pointer;
 
-import java.util.*;
-
-public class Two_Sum_1 {
-
+public class Two_Sum_1_TP {
 	public static void main(String[] a) {
 		int n = (int) (Math.random() * 10) + 1;
 		int target = (int) (Math.random() * 10) + 1;
@@ -21,14 +18,13 @@ public class Two_Sum_1 {
 	}
 
 	private static String twoSum(int[] arr, int target) {
-		StringBuilder sb = new StringBuilder();
-		Map<Integer, Integer> hm = new HashMap<>();
-		for (int i = 0; i < arr.length; i++) {
-			int exp = target - arr[i];
-			if (hm.containsKey(exp)) {
-				return sb.append(hm.get(exp)).append(" and ").append(i).toString();
+		StringBuilder str = new StringBuilder();
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = i + 1; j < arr.length; j++) {
+				if (arr[i] + arr[j] == target) {
+					return str.append(i).append(" ").append(j).toString();
+				}
 			}
-			hm.put(arr[i], i);
 		}
 		return "not found";
 	}
